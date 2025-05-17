@@ -15,22 +15,45 @@ const screen = {
         `
         let repositoriesItens = ""
         user.repositories.forEach(repo => {
-            repositoriesItens += `<li><a href="${repo.html_url}" target="_blank">${repo.name}</a></li>`
+            repositoriesItens += `
+            <li>
+                <a href="${repo.html_url}" target="_blank">
+                    <h3>${repo.name}</h3>
+                    <div class="details">
+                        <div class="details-content">
+                            <h4>🍴 Forks:</h4>
+                            <p>${repo.forks_count}</p>
+                        </div>
+                        <div class="details-content">
+                            <h4>⭐ Estrelas:</h4>
+                            <p>${repo.stargazers_count}</p>
+                        </div>
+                        <div class="details-content">
+                            <h4>👀 Observadores:</h4>
+                            <p>${repo.watchers_count}</p>
+                        </div>
+                        <div class="details-content">
+                            <h4>💻 Linguagem:</h4>
+                            <p>${repo.language}</p>
+                        </div>
+                    </div>
+                </a>
+            </li>`
         })
 
         if (user.repositories.length > 0) {
             this.userProfile.innerHTML +=
                 `<div class="repositories section">
-                <h2>Repositorios</h2>
-                <ul>${repositoriesItens}</ul>
-            </div>`
-        } else {
+                    <h2>Repositorios</h2>
+                    <ul>${repositoriesItens}</ul>
+                </div>`
+            } else {
             this.userProfile.innerHTML +=
                 `<div class="repositories section">
-                <h2>Repositorios</h2>
-                <p>Não tem repositórios ainda 😥</p>
-            </div>`
-        }
+                    <h2>Repositorios</h2>
+                    <p>Não tem repositórios ainda 😥</p>
+                </div>`
+            }
 
         let eventsHtml = "";
 

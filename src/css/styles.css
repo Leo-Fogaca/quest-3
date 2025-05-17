@@ -146,6 +146,30 @@ main {
   color: #fff
 }
 
+.container .profile-data h3 {
+  font-weight: 900;
+  margin-bottom: 20px;
+}
+
+.container .profile-data .details {
+  display: flex;
+  flex-direction: column;
+}
+
+.container .profile-data .details-content {
+  margin: 5px 0px;
+}
+
+.container .profile-data .details-content {
+  display: flex;
+  justify-content: space-between;
+  gap: 50px;
+}
+
+.container .profile-data .details h4 {
+  font-weight: 900;
+}
+
 .container .profile-data.hide{
   display: none;
 }
